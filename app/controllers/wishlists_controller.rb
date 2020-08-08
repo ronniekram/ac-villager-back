@@ -16,6 +16,10 @@ class WishlistController < ApplicationController
       include: [:villagers]
   end 
 
+  def destroy
+    @wishlist.destroy
+  end 
+
   private
 
   def wishlist_params 
