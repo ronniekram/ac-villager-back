@@ -14,7 +14,7 @@ class WishlistController < ApplicationController
       include: [:villagers],
       status: :created
     else 
-      render json: @wishlist.errors, status: :unprocessable_entity
+      render json: {error: 'Wishlist not created.'}
     end 
   end 
 

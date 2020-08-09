@@ -12,7 +12,7 @@ class IslandsController < ApplicationController
         include: [:villagers],
         status: :created
     else 
-      render json: @island.errors, status: :unprocessable_entity
+      render json: {error: 'Island not created.'}
     end 
   end 
 
