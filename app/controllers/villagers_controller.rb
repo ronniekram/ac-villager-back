@@ -1,9 +1,10 @@
 class VillagersController < ApplicationController 
   before_action :set_villager, except: [:create]
-  def index 
-    villagers = Villager.all
-    render json: villagers
-  end 
+  
+  # def index 
+  #   villagers = Villager.all
+  #   render json: villagers
+  # end 
 
   def create
     villager = Villager.new(villager_params)
