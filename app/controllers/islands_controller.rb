@@ -25,7 +25,7 @@ class IslandsController < ApplicationController
   private
   
   def island_params 
-    params.require(:island).permit(:name, :num_of_villagers, :villager_ids => [])
+    params.require(:island).permit(:name, :owner, :villager_ids => [])
   end 
 
 end 
