@@ -6,7 +6,13 @@ class VillagersController < ApplicationController
   end 
 
   def create
-    render json: villager
+    villager = Villager.new(villager_params)
+
+    if villager.save 
+      render json: villager, 
+      status: :created
+    else 
+      render json: villager.errors, status: :unprocessable_entity
   end 
 
   def show 

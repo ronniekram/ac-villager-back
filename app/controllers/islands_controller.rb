@@ -2,8 +2,14 @@ class IslandsController < ApplicationController
 before_action :set_island, except: [:create]
 
   def create
-    render json: island, 
-      include: [:villagers]
+    island = Island.new(island_params)
+    if island.save
+      render json: island, 
+        include: [:villagers],
+        status: :created
+    else 
+      render json: island.errors, status: :unprocessable_entity
+    end 
   end 
 
   def show
@@ -12,8 +18,13 @@ before_action :set_island, except: [:create]
   end 
 
   def update
-    render json: @island, 
-      include: [:villagers]
+    if @island.update(island_params)
+      render json: @island, 
+        include: [:villagers]
+    else 
+      render json: @island.errors,
+        status: :unprocessable_entity
+    end 
   end 
 
   private
