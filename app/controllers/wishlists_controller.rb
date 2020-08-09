@@ -18,14 +18,14 @@ class WishlistController < ApplicationController
       include: [:villagers]
   end 
 
-  def update
-    if @wishlist.update(wishlist_params)
-      render json: @wishlist,
-        include: [:villagers]
-    else 
-      render json: @wishlist.errors, status: :unprocessable_entity
-    end 
-  end 
+  # def update
+  #   if @wishlist.update(wishlist_params)
+  #     render json: @wishlist,
+  #       include: [:villagers]
+  #   else 
+  #     render json: @wishlist.errors, status: :unprocessable_entity
+  #   end 
+  # end 
 
   def destroy
     @wishlist.destroy
