@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_230920) do
 
   create_table "islands", force: :cascade do |t|
     t.string "name"
-    t.integer "num_of_villagers"
+    t.string "owner"
     t.integer "villager_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2020_08_08_230920) do
 
   create_table "wishlists", force: :cascade do |t|
     t.string "name"
+    t.string "owner"
     t.integer "villager_ids"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
