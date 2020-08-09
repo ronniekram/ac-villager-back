@@ -1,19 +1,19 @@
 class VillagersController < ApplicationController 
   before_action :set_villager, except: [:create]
   
-  # def index 
-  #   villagers = Villager.all
-  #   render json: villagers
-  # end 
+  def index 
+    @villagers = Villager.all
+    render json: villagers
+  end 
 
   def create
-    villager = Villager.new(villager_params)
+    @villager = Villager.new(villager_params)
 
-    if villager.save 
-      render json: villager, 
+    if @villager.save 
+      render json: @villager, 
       status: :created
     else 
-      render json: villager.errors, status: :unprocessable_entity
+      render json: @villager.errors, status: :unprocessable_entity
   end 
 
   def show 

@@ -1,31 +1,25 @@
 class IslandsController < ApplicationController 
-# before_action :set_island, except: [:create]
+
+  def index
+    @islands = Island.all 
+    render json: @islands
+  end 
 
   def create
-    island = Island.new(island_params)
-    if island.save
-      render json: island, 
+    @island = Island.new(island_params)
+    if @island.save
+      render json: @island, 
         include: [:villagers],
         status: :created
     else 
-      render json: island.errors, status: :unprocessable_entity
+      render json: @island.errors, status: :unprocessable_entity
     end 
   end 
 
   def show
-    island = Island.find_by(id: params[:id])
-    render json: island, 
+    @island = Island.find_by(id: params[:id])
+    render json: @island, 
       include: [:villagers]
-  end 
-
-  # def update
-  #   if @island.update(island_params)
-  #     render json: @island, 
-  #       include: [:villagers]
-  #   else 
-  #     render json: @island.errors,
-  #       status: :unprocessable_entity
-  #   end 
   end 
 
   private
@@ -34,7 +28,4 @@ class IslandsController < ApplicationController
     params.require(:island).permit(:name, :num_of_villagers, :villager_ids => [])
   end 
 
-  # def set_island
-  #   @island = Island.find_by(id: params[:id])
-  # end 
 end 

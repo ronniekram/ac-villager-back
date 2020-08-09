@@ -1,15 +1,20 @@
 class WishlistController < ApplicationController 
   before_action :set_wishlist, except: [:create]
 
-  def create
-    wishlist = Wishlist.new(wishlist_params)
+  def index 
+    @wishlists = Wishlist.all 
+    render json: @wishlists
+  end 
 
-    if wishlist.save 
-      render json: wishlist,
+  def create
+    @wishlist = Wishlist.new(wishlist_params)
+
+    if @wishlist.save 
+      render json: @wishlist,
       include: [:villagers],
       status: :created
     else 
-      render json: wishlist.errors, status: :unprocessable_entity
+      render json: @wishlist.errors, status: :unprocessable_entity
     end 
   end 
 
@@ -17,15 +22,6 @@ class WishlistController < ApplicationController
     render json: @wishlist,
       include: [:villagers]
   end 
-
-  # def update
-  #   if @wishlist.update(wishlist_params)
-  #     render json: @wishlist,
-  #       include: [:villagers]
-  #   else 
-  #     render json: @wishlist.errors, status: :unprocessable_entity
-  #   end 
-  # end 
 
   def destroy
     @wishlist.destroy
