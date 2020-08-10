@@ -9,7 +9,6 @@ class IslandsController < ApplicationController
     @island = Island.new(island_params)
     if @island.save
       render json: @island, 
-        include: [:villagers],
         status: :created
     else 
       render json: {error: 'Island not created.'}
@@ -18,8 +17,7 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find_by(id: params[:id])
-    render json: @island, 
-      include: [:villagers]
+    render json: @island
   end 
 
   private

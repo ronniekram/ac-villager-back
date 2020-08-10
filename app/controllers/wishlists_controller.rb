@@ -11,7 +11,6 @@ class WishlistController < ApplicationController
 
     if @wishlist.save 
       render json: @wishlist,
-      include: [:villagers],
       status: :created
     else 
       render json: {error: 'Wishlist not created.'}
@@ -20,7 +19,6 @@ class WishlistController < ApplicationController
 
   def show 
     render json: @wishlist,
-      include: [:villagers]
   end 
 
   def destroy
