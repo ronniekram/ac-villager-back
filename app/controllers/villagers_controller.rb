@@ -13,6 +13,7 @@ class VillagersController < ApplicationController
       status: :created
     else 
       render json: @villager.errors, status: :unprocessable_entity
+    end 
   end 
 
   def show 
