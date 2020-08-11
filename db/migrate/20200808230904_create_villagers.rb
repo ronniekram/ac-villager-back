@@ -7,6 +7,7 @@ class CreateVillagers < ActiveRecord::Migration[6.0]
       t.string :personality
       t.string :species
       t.string :birthday
+      t.integer :island_id
       t.timestamps
     end
   end
