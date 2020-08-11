@@ -3,7 +3,7 @@ class VillagersController < ApplicationController
   
   def index 
     @villagers = Villager.all
-    render json: villagers
+    render json: @villagers
   end 
 
   def create
@@ -32,8 +32,7 @@ class VillagersController < ApplicationController
       :gender,
       :personality, 
       :species,
-      :birthday,
-      :sign)
+      :birthday)
   end 
 
   def set_villager

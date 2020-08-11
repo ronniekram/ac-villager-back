@@ -7,9 +7,6 @@ class CreateVillagers < ActiveRecord::Migration[6.0]
       t.string :personality
       t.string :species
       t.string :birthday
-      t.string :sign
-      t.integer :island_id
-      t.integer :wishlist_id
       t.timestamps
     end
   end

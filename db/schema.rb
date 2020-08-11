@@ -30,9 +30,6 @@ ActiveRecord::Schema.define(version: 2020_08_08_230920) do
     t.string "personality"
     t.string "species"
     t.string "birthday"
-    t.string "sign"
-    t.integer "island_id"
-    t.integer "wishlist_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
