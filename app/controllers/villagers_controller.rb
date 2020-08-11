@@ -1,5 +1,4 @@
 class VillagersController < ApplicationController 
-  before_action :set_villager, except: [:create]
   
   def index 
     @villagers = Villager.all
@@ -17,10 +16,17 @@ class VillagersController < ApplicationController
   end 
 
   def show 
+    @villager = Villager.find_by(id: params[:id])
+    render json: @villager
+  end 
+
+  def search 
+    @villager = Villager.find_by(name: params[:name])
     render json: @villager
   end 
 
   def destroy
+    @villager = Villager.find_by(id: params[:id])
     @villager.destroy
   end 
 
@@ -35,7 +41,4 @@ class VillagersController < ApplicationController
       :birthday)
   end 
 
-  def set_villager
-    @villager = Villager.find_by(id: params[:id])
-  end 
 end 

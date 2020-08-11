@@ -11,16 +11,6 @@ villagers = RestClient.get 'https://raw.githubusercontent.com/ronniekram/acnh-js
 
 villagers_hash = JSON.parse(villagers)
 
-# villagers_hash.each do |v|
-#   Villager.create(
-#     name: v["name"]["name-USen"],
-#     image: v["image-uri"],
-#     gender: v["gender"],
-#     personality: v["personality"],
-#     species: v["species"],
-#     birthday: v["birthday-string"]
-#   )
-# end 
 
 villagers_hash.each do |k, v|
     Villager.create(
