@@ -21,6 +21,11 @@ class IslandsController < ApplicationController
     render json: @island
   end 
 
+  def destroy
+    @island = Island.find_by(id: params[:id])
+    @island.destroy
+  end
+
   private
   
   def island_params 
