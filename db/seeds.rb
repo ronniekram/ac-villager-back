@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require "rest-client"
-
+require "faker"
 villagers = RestClient.get 'https://raw.githubusercontent.com/ronniekram/acnh-json/master/acnh.json'
 
 villagers_hash = JSON.parse(villagers)
@@ -21,6 +21,14 @@ villagers_hash.each do |k, v|
       species: v["species"],
       birthday: v["birthday-string"]
     )
+end 
+
+15.times do 
+  Island.create(
+    name: Faker::Dessert.unique.variety,
+    owner: Faker::Name.unique.name,
+    villager_ids: [Faker::Number.within(range: 1..391), Faker::Number.within(range: 1..391), Faker::Number.within(range: 1..391)]
+  )
 end 
 
 
