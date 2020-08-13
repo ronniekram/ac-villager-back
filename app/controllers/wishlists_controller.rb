@@ -1,4 +1,4 @@
-class WishlistController < ApplicationController 
+class WishlistsController < ApplicationController 
   before_action :set_wishlist, except: [:create]
 
   def index 
