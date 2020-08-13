@@ -5,31 +5,31 @@ class VillagersController < ApplicationController
     render json: @villagers
   end 
 
-  def create
-    @villager = Villager.new(villager_params)
+  # def create
+  #   @villager = Villager.new(villager_params)
 
-    if @villager.save 
-      render json: @villager, 
-      status: :created
-    else 
-      render json: @villager.errors, status: :unprocessable_entity
-    end 
-  end 
+  #   if @villager.save 
+  #     render json: @villager, 
+  #     status: :created
+  #   else 
+  #     render json: @villager.errors, status: :unprocessable_entity
+  #   end 
+  # end 
 
   def show 
     @villager = Villager.find_by(id: params[:id])
     render json: @villager
   end 
 
-  def search 
-    @villager = Villager.find_by(name: params[:name])
-    render json: @villager
-  end 
+  # def search 
+  #   @villager = Villager.find_by(name: params[:name])
+  #   render json: @villager
+  # end 
 
-  def destroy
-    @villager = Villager.find_by(id: params[:id])
-    @villager.destroy
-  end 
+  # def destroy
+  #   @villager = Villager.find_by(id: params[:id])
+  #   @villager.destroy
+  # end 
 
   private 
 

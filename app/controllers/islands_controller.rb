@@ -18,7 +18,8 @@ class IslandsController < ApplicationController
 
   def show
     @island = Island.find_by(id: params[:id])
-    render json: @island
+    render json: @island, 
+    include: [:villagers]
   end 
 
   def destroy
