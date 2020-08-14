@@ -5,7 +5,4 @@ Rails.application.routes.draw do
   resources :islands do 
     resources :villagers 
   end 
-  resources :wishlists do 
-    resources :villagers 
-  end
 end

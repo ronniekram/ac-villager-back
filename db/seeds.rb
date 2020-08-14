@@ -31,13 +31,5 @@ end
   )
 end 
 
-  15.times do 
-    Wishlist.create(
-      name: Faker::Appliance.unique.equipment,
-      owner: Faker::Name.unique.name,
-      villager_ids: [Faker::Number.within(range: 1..391), Faker::Number.within(range: 1..391), Faker::Number.within(range: 1..391)]
-    )
-end 
-
 
 
