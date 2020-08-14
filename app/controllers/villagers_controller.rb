@@ -12,7 +12,7 @@ class VillagersController < ApplicationController
 
   def update
     @villager = Villager.find_by(id: params[:id])
-    @villager.update(:island_id)
+    @villager.update(island_id: params[:island_id])
     if @villager.save
       render json: @villager
     end 
