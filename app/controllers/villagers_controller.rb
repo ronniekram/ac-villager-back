@@ -10,6 +10,14 @@ class VillagersController < ApplicationController
     render json: @villager
   end 
 
+  def update
+    @villager = Villager.find_by(id: params[:id])
+    @villager.update(:island_id)
+    if @villager.save
+      render json: @villager
+    end 
+  end 
+
   private 
 
   def villager_params 
@@ -18,7 +26,8 @@ class VillagersController < ApplicationController
       :gender,
       :personality, 
       :species,
-      :birthday)
+      :birthday,
+      :island_id)
   end 
 
 end 
