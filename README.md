@@ -1,26 +1,31 @@
-Frontend located [https://github.com/ronniekram/ac-villager-front](here).
+#Village Watch: New Horizons
+##Allows a user to keep track of the villagers on their Animal Crossing island, add and remove villagers as well as viewing information about them.
 
-# README
+###Uses:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+####Frontend: HTML, CSS, React, Redux,  React Bootstrap UI -- built with create-react-app -> [here](https://github.com/ronniekram/ac-villager-front)
+####Backend: Rails API
 
-Things you may want to cover:
+###Getting Started
+Fork and clone ac-villager-front and ac-villager-back
+Open Terminal with two tabs
+Direct one tab to ac-villager-back
+Direct second tab to ac-villager-front
+  #####ac-villager-back: 
+    * run bundle install
+    * rails db:create
+    * rails db:migrate
+    * rails db:seed to add all villager information
+    * rails s to open server and start backend -- use port 3000
+  #####ac-villager front:
+    * run npm install && start, browser will open to Village Watch homepage
 
-* Ruby version
 
-* System dependencies
+###Contributing
+Bug reports and pull requests are welcome on GitHub at [here](https://github.com/ronnie-kram/ac-villager-front). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
-* Configuration
+###License
+The app is available as open source under the terms of the MIT License.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+###Code of Conduct
+Everyone interacting in the Village Watch: New Horizons project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.

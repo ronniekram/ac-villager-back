@@ -22,13 +22,14 @@ class IslandsController < ApplicationController
     include: [:villagers]
   end 
 
-  def update 
-    @island = Island.find_by(id: params[:id])
-    @island.update(["island"]["villager_ids"])
-    @island.save
-    render json: @island,
-      include: [:villagers]
-  end 
+  # def update 
+  #   @island = Island.find_by(id: params[:id])
+  #   @island.update(island_params)
+  #   if @island.save
+  #     render json: @island,
+  #     include: [:villagers]
+  #   end 
+  # end 
 
   def destroy
     @island = Island.find_by(id: params[:id])

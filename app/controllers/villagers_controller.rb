@@ -16,7 +16,7 @@ class VillagersController < ApplicationController
     if @villager.save
       render json: @villager
     end 
-  end 
+  end
 
   private 
 
